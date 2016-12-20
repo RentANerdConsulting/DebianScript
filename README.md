@@ -31,6 +31,8 @@ Either download from here and place the files where you would like them, or begi
 
 3) sudo chmod -R 770 ./
 
-4) Bash is the only currently working version, so use this command: mv Bash/* ./
+4) If updating from 1.0 (Bash is the only currently working version), use this command: mv Bash/* ./
 
-5) ./LinuxUtility.sh
+5) If you're starting with v1.1-alpha.0, then: cd Bash
+
+6) ./LinuxUtility.sh
