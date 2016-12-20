@@ -94,6 +94,7 @@ installedversion=""
 . $PWD/scripts/EmailFunctions.cfg
 . $PWD/scripts/SystemUtilityFunctions.cfg
 . $PWD/scripts/PrimaryFirewall.cfg
+. $PWD/scripts/WebminFirewall.cfg
 . $PWD/scripts/RsyncFirewall.cfg
 . $PWD/scripts/NFSFirewall.cfg
 . $PWD/scripts/CUPSFirewall.cfg
@@ -111,6 +112,7 @@ installedversion=""
 . $PWD/scripts/CleanupFunctions.cfg
 . $PWD/scripts/SambaFunctions.cfg
 . $PWD/scripts/PlexFunctions.cfg
+. $PWD/scripts/WebminFunctions.cfg
 . $PWD/scripts/InstallFunctions.cfg
 . $PWD/scripts/UninstallFunctions.cfg
 . $PWD/scripts/UninstallMenus.cfg
