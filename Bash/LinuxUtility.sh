@@ -34,7 +34,7 @@ useraddoops=0
 ############################################
 
 menuselection=1
-declare -a menuoptions=('1 - Install primary functions' '2 - Uninstall primary functions' '3 - System utilities' '4 - Firewall options' '5 - User management' '0 - Exit and reboot.')
+declare -a menuoptions=('1 - Install primary functions' '2 - Uninstall primary functions' '3 - System utilities' '4 - Firewall options' '5 - User management' '6 - Certificate management' '0 - Exit and reboot.')
 declare -a installmenuoptions=('1 - Install and configure ownCloud.' '2 - Install and configure Samba file sharing.' '3 - Install Plex Media Server.' '4 - Install Webmin' '0 - Return to Main Menu')
 declare -a usersmenuoptions=('1 - Add additional administrators.' '2 - Add additional standard users.' '3 - Add additional Samba users' '0 - Return to Main Menu')
 declare -a systemmenuoptions=('1 - System cleanup - remove obsolete packages' '2 - System update - update system files and programs' '3 - Upgrade ownCloud after package update' '4 - Update Tripwire database' '5 - List configured cron jobs' '0 - Return to Main Menu')
@@ -45,7 +45,7 @@ declare -a uninstallmenuoptions=('1 - Uninstall ownCloud' '2 - Uninstall Samba' 
 declare -a removeowncloudmenuoptions=('1 - Uninstall ownCloud application and MariaDB' '2 - Uninstall ownCloud application, all pre-requisites, database, and stored data' '0 - Return to Uninstall Menu')
 declare -a removesambamenuoptions=('1 - Uninstall Samba application' '2 - Uninstall Samba application, pre-requisites, and data' '0 - Return to Uninstall Menu')
 declare -a removeplexmenuoptions=('1 - Uninstall Plex application' '2 - Uninstall Plex application, pre-requisites, and data' '0 - Return to Uninstall Menu')
-
+declare -a certmanagemenuoptions=('1 - Change installed certificates' '2 - Add new Certificate Authority' '0 - Return to Main Menu')
 
 ###### Certificate variables ######
 ###################################
@@ -56,6 +56,9 @@ clientcachain="none"
 generatecertificate=0
 letsencrypt=0
 combinedcert=0
+oldcert=""
+oldkey=""
+oldcachain=""
 
 
 ###### Universal variables and arrays ######
@@ -109,6 +112,7 @@ installedversion=""
 . $PWD/scripts/LogConfFunctions.cfg
 . $PWD/scripts/ownCloudFunctions.cfg
 . $PWD/scripts/ApacheFunctions.cfg
+. $PWD/scripts/CertificateFunctions.cfg
 . $PWD/scripts/CleanupFunctions.cfg
 . $PWD/scripts/SambaFunctions.cfg
 . $PWD/scripts/PlexFunctions.cfg
