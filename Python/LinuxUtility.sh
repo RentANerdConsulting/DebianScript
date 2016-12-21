@@ -76,7 +76,7 @@ tzmain=""
 tzcountry=""
 tzlocale=""
 hostedserver=""
-currentversion="1.1"
+currentversion="1.1-alpha.1"
 installedversion=""
 
 
