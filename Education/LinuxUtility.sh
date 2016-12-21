@@ -56,9 +56,6 @@ clientcachain="none"
 generatecertificate=0
 letsencrypt=0
 combinedcert=0
-oldcert=""
-oldkey=""
-oldcachain=""
 
 
 ###### Universal variables and arrays ######
