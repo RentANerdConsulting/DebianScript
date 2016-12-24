@@ -45,7 +45,7 @@ declare -a uninstallmenuoptions=('1 - Uninstall ownCloud' '2 - Uninstall Samba' 
 declare -a removeowncloudmenuoptions=('1 - Uninstall ownCloud application and MariaDB' '2 - Uninstall ownCloud application, all pre-requisites, database, and stored data' '0 - Return to Uninstall Menu')
 declare -a removesambamenuoptions=('1 - Uninstall Samba application' '2 - Uninstall Samba application, pre-requisites, and data' '0 - Return to Uninstall Menu')
 declare -a removeplexmenuoptions=('1 - Uninstall Plex application' '2 - Uninstall Plex application, pre-requisites, and data' '0 - Return to Uninstall Menu')
-declare -a certmanagemenuoptions=('1 - Change installed certificates' '2 - Add new Certificate Authority' '0 - Return to Main Menu')
+declare -a encryptmanagemenuoptions=('1 - Change installed certificates' '2 - Add new Certificate Authority' '3 - Generate SSH RSA keys using ssh-keygen - less secure' '4 - Generate SSH RSA keys using PuTTYgen - more secure' '5 - Disable SSH Password Login' '0 - Return to Main Menu')
 
 ###### Certificate variables ######
 ###################################
