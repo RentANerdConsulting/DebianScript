@@ -34,7 +34,7 @@ useraddoops=0
 ############################################
 
 menuselection=1
-declare -a menuoptions=('1 - Install primary functions' '2 - Uninstall primary functions' '3 - System utilities' '4 - Firewall options' '5 - User management' '6 - Certificate management' '0 - Exit and reboot.')
+declare -a menuoptions=('1 - Install primary functions' '2 - Uninstall primary functions' '3 - System utilities' '4 - Firewall options' '5 - User management' '6 - Certificate management' '0 - Exit without reboot' '00 - Exit and reboot.')
 declare -a installmenuoptions=('1 - Install and configure ownCloud.' '2 - Install and configure Samba file sharing.' '3 - Install Plex Media Server.' '4 - Install Webmin' '0 - Return to Main Menu')
 declare -a usersmenuoptions=('1 - Add additional administrators.' '2 - Add additional standard users.' '3 - Add additional Samba users' '4 - Display non system user accounts - full detail' '5 - Display non system user accounts - user name only' '6 - Display system user accounts - full detail' '7 - Display system user accounts - user name only' '8 - Display groups - full detail' '9 - Display groups - group names only' '10 - Remove user accounts' '0 - Return to Main Menu')
 declare -a systemmenuoptions=('1 - System cleanup - remove obsolete packages' '2 - System update - update system files and programs' '3 - Upgrade ownCloud after package update' '4 - Update Tripwire database' '5 - List configured cron jobs' '0 - Return to Main Menu')
