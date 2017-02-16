@@ -10,7 +10,7 @@ We would like to create two main adaptations, aside from the master done in Bash
 
 3) While v1.0 of this script isn't in wide use, all changes that alter the settings, and do not simply add new functions, must be integrated into the version update function for each version. Use tests to verify that the changes need to be made. For testing purposes, v1.0 can be made available.
 
-4) Each new complete version must have it's own entry in the version update script, to ensure compatibility and smooth transitioning.
+4) Each new complete version must have it's own entry in the version update function, to ensure compatibility and smooth transitioning.
 
 5) Regardless of version or adaption, please follow thorough commenting conventions.
 
