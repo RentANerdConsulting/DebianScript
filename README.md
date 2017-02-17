@@ -14,10 +14,10 @@ Either download from here and place the files where you would like them, or begi
 
 2) tar --strip-components=2 -zxvf v.1.1.1.tar.gz DebianScript-v.1.1.1/Bash/
 
-4) sudo chown -R `whoami`:`whoami` ./
+3) sudo chown -R `whoami`:`whoami` ./
 
-5) sudo chmod -R 770 ./
+4) sudo chmod -R 770 ./
 
-6) rm -R debian turnkey
+5) rm -R debian turnkey
 
 6) ./LinuxUtility.sh
