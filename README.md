@@ -14,8 +14,8 @@ Either download from here and place the files where you would like them, or begi
 
 2) tar --strip-components=2 -zxvf v.1.1.1.tar.gz DebianScript-v.1.1.1/Bash/
 
-Make sure each whoami is surrounded by tilde on each side, eg `
-3) sudo chown -R `whoami`:`whoami` ./
+Make sure each whoami is surrounded by tilde on each side, eg
+3) sudo chown -R \`whoami\`:\`whoami\` ./
 
 4) sudo chmod -R 770 ./
 
