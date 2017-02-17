@@ -32,17 +32,20 @@ $ ./LinuxUtility.sh
   
   
 If the script was used to install ownCloud do the next command as well:  (This will eventually be a built in function)
-  
+```
   $ sudo nano /etc/apache2/mods-available/evasive.conf
-  
+```  
   add to file
-	  DOSWhitelist   $SUBNET
-    (Use subnet info and proper netmask in place of $SUBNET, using *’s in place of /24. Example: 192.168.1.0/24 = 192.168.1.*)
-    
+```
+DOSWhitelist   $SUBNET
+```
+(Use subnet info and proper netmask in place of $SUBNET, using *’s in place of /24. Example: 192.168.1.0/24 = 192.168.1.*)
   and
-	  DOSSystemCommand "echo 'mod_evasive HTTP Blacklisted %s on $FQDN' | mail -s 'Blocked IP by mod_evasive' root@localhost"
-    (Make sure to use the FQDN in place of $FQDN in the above entry, and make sure it’s all on one line.)
-    (There’s an occasional glitch when copying text)
+  ```
+  DOSSystemCommand "echo 'mod_evasive HTTP Blacklisted %s on $FQDN' | mail -s 'Blocked IP by mod_evasive' root@localhost"
+  ```
+  (Make sure to use the FQDN in place of $FQDN in the above entry, and make sure it’s all on one line.)
+  (There’s an occasional glitch when copying text)
    
    
    
@@ -50,15 +53,15 @@ CRON CONFIGURATION
   
   
 OwnCloud Cron
- 
+ ```
   $ sudo crontab -u www-data -e
- 
+ ```
   Select the option to use nano as the editor.
  
   Paste the following at the end of the created file:
- 
+ ```
   */15  *  *  *  * php -f /var/www/owncloud/cron.php
- 
+ ```
   ctrl + x to exit, y to save, enter to save the file.
  
  
