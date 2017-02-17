@@ -16,12 +16,8 @@ and you will be prompted for your password when necessary. Do not run as root us
 $ wget https://github.com/RentANerdConsulting/DebianScript/archive/v.1.1.1.tar.gz
 
 $ tar --strip-components=2 -zxvf v.1.1.1.tar.gz DebianScript-v.1.1.1/Bash/
-```
-  
-Make sure each whoami is surrounded by backticks on each side.
 
-```
-$ sudo chown -R \`whoami\`:\`whoami\` ./
+$ sudo chown -R `whoami`:`whoami` ./
 
 $ sudo chmod -R 770 ./
 
