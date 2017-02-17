@@ -70,7 +70,7 @@ DOSWhitelist   $SUBNET
   30 3 * * * /usr/sbin/tripwire --check | mail -s "Tripwire report for FDQN" Admin_email
  ```  
  (FQDN is the servers fully qualified domain name, ie:  owncloud.randomwebsite.com. 
- Admin_email is the email address used during installation, ie: \somecallmetim@google.com.
+ Admin_email is the email address used during installation, ie: 'somecallmetim@google.com'.
  First number is minute of the hour, second number is hour of the day, in 24hr format. Runs daily.
  Set to a time when the server will be on, but not actively being used.)
  
