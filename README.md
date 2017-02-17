@@ -8,16 +8,16 @@ This currently only supports Ubuntu Server 16.04 LTS. Other distros will be supp
 
 USE:
 
-Either download from here and place the files where you would like them, or begin in the directory you wish to place them in.
+Either download from here and place the files where you would like them, or begin in the directory you wish to place them in. This script assumes you are logged in as a user with sudo privileges, you own the folder you're extracting it to, and you will be prompted for your password when necessary. Do not run as root user or with sudo.
 
 1) wget https://github.com/RentANerdConsulting/DebianScript/archive/v.1.1.1.tar.gz
 
-2) tar --strip-components=1 -zxvf v.1.1.1.tar.gz -C ./
+2) tar --strip-components=2 -zxvf v.1.1.1.tar.gz DebianScript-v.1.1.1/Bash/
 
-3) sudo chmod -R 770 ./
+4) sudo chown -R `whoami`:`whoami` ./
 
-4) If updating from 1.0 (Bash is the only currently working version), use this command: mv Bash/* ./
+5) sudo chmod -R 770 ./
 
-5) If you're starting with v1.1-alpha.0, then: cd Bash
+6) rm -R debian turnkey
 
 6) ./LinuxUtility.sh
