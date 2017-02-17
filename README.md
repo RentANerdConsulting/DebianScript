@@ -1,8 +1,14 @@
 # DebianScript
 Bash Script for hardening Ubuntu and Debian linux distributions, installing major server functions, and configuring them.
 
+**This script is provided as-is. Use it at your own risk. It has been tested thoroughly, but we can't
+prepare for every possible issue or configuration.**
+
 More functions will be added for end users as well, and for additional server features, creating a simple,
 menu driven script to perform most major installation and configuration tasks with minimal user intervention and time required.
+
+The script uses flag files to track which functions have been completed and what has been configured. 
+This prevents it from running multiple instances of the same functions and causing configuration errors.
 
 **This currently only supports Ubuntu Server 16.04 LTS. Other distros will be supported soon.**
 
@@ -25,8 +31,19 @@ $ rm -R debian turnkey
 
 $ ./LinuxUtility.sh
 ```  
+The system will prompt for a reboot at least once. After reboot, cd to the script directory.
+```
+$ cd /directory-you-chose
   
-  
+$ ./LinuxUtility.sh
+```
+Once at the main menu, choose exit without reboot, then 
+```
+$ sudo chown -R `whoami`:admin ./
+```
+Once this is done, rerun the script and enjoy.
+
+
 If the script was used to install ownCloud do the next command as well:  (This will eventually be a built in function)
 ```
   $ sudo nano /etc/apache2/mods-available/evasive.conf
