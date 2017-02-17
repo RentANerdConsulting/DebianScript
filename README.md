@@ -18,7 +18,7 @@ $ wget https://github.com/RentANerdConsulting/DebianScript/archive/v.1.1.1.tar.g
 $ tar --strip-components=2 -zxvf v.1.1.1.tar.gz DebianScript-v.1.1.1/Bash/
 ```
   
-Make sure each whoami is surrounded by tilde on each side
+Make sure each whoami is surrounded by backticks on each side.
 
 ```
 $ sudo chown -R \`whoami\`:\`whoami\` ./
@@ -39,20 +39,20 @@ If the script was used to install ownCloud do the next command as well:  (This w
 ```
 DOSWhitelist   $SUBNET
 ```
-(Use subnet info and proper netmask in place of $SUBNET, using *’s in place of /24. Example: 192.168.1.0/24 = 192.168.1.*)
+(Use subnet info and proper netmask in place of $SUBNET, using \*’s in place of /24. Example: 192.168.1.0/24 = 192.168.1.\*)
   and
   ```
   DOSSystemCommand "echo 'mod_evasive HTTP Blacklisted %s on $FQDN' | mail -s 'Blocked IP by mod_evasive' root@localhost"
   ```
-  (Make sure to use the FQDN in place of $FQDN in the above entry, and make sure it’s all on one line.)
-  (There’s an occasional glitch when copying text)
+  (Make sure to use the FQDN in place of $FQDN in the above entry, and make sure it’s all on one line.
+  There’s an occasional glitch when copying text)
    
    
    
-CRON CONFIGURATION
+**CRON CONFIGURATION**
   
   
-OwnCloud Cron
+**OwnCloud Cron**
  ```
   $ sudo crontab -u www-data -e
  ```
@@ -65,29 +65,30 @@ OwnCloud Cron
   ctrl + x to exit, y to save, enter to save the file.
  
  
-Tripwire Cron
- 
+**Tripwire Cron**
+ ```
   $ sudo crontab -e
- 
+ ```
   Paste and edit the following at the end of the created file:
-  (FQDN is the servers fully qualified domain name, ie:  owncloud.randomwebsite.com)
-  (Admin_email is the email address used during installation, ie: theycallmetim@google.com)
-  (First number is minute of the hour, second number is hour of the day, in 24hr format. Runs daily.)
-  (Set to a time when the server will be on, but not actively being used.)
- 
+ ```
   30 3 * * * /usr/sbin/tripwire --check | mail -s "Tripwire report for FDQN" Admin_email
-   
-  ctrl + x to exit, y to save, enter to save the file.
+ ```  
+ (FQDN is the servers fully qualified domain name, ie:  owncloud.randomwebsite.com 
+ Admin_email is the email address used during installation, ie: theycallmetim@google.com
+ First number is minute of the hour, second number is hour of the day, in 24hr format. Runs daily.
+ Set to a time when the server will be on, but not actively being used.)
+ 
+ ctrl + x to exit, y to save, enter to save the file.
  
  
-Let’sEncrypt Cron (if installed for certificate)
- 
+**Let’sEncrypt Cron (if installed for certificate)**
+ ```
   $ sudo crontab -e
- 
+ ```
   Paste and edit the following at the end of the created file:
   (First number is minute of the hour, second number is hour of the day, in 24hr format. Runs daily.)
   (Set to a time when the server will be on, but not actively being used.)
- 
+ ```
   30 2 * * * /usr/bin/letsencrypt renew >> /var/log/le-renew.log
-   
+ ```
   ctrl + x to exit, y to save, enter to save the file.
