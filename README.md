@@ -17,6 +17,8 @@ This prevents it from running multiple instances of the same functions and causi
 Either download from here and place the files where you would like them, or begin in the directory you wish to place them in. 
 This script assumes you are logged in as a user with sudo privileges, you own the folder you're extracting it to,
 and you will be prompted for your password when necessary. Do not run as root user or with sudo.
+
+Change the version number for the first two commands to suit the version you wish to download from the available releases.
   
 ```
 $ wget https://github.com/RentANerdConsulting/DebianScript/archive/v.1.1.1.tar.gz
