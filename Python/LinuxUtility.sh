@@ -61,6 +61,7 @@ combinedcert=0
 ###### Universal variables and arrays ######
 ############################################
 
+errortrack="0"
 uninstall=""
 virtualbox=""
 nicname=""
@@ -76,9 +77,16 @@ tzmain=""
 tzcountry=""
 tzlocale=""
 hostedserver=""
-currentversion="1.1.1"
+currentversion="1.1.2"
 installedversion=""
 userchoice=""
+physicalsystem=""
+sambadir=""
+plexdir=""
+exthttpport=""
+exthttpsport=""
+inthttpport=""
+inthttpsport=""
 
 
 # Import functions
@@ -123,6 +131,7 @@ userchoice=""
 . $PWD/scripts/UninstallFunctions.cfg
 . $PWD/scripts/UninstallMenus.cfg
 . $PWD/scripts/MainMenus.cfg
+. $PWD/scripts/GetExistingConfig.cfg
 . $PWD/scripts/PrimaryPreMenu.cfg
 
 
