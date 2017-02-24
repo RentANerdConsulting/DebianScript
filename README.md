@@ -23,7 +23,7 @@ Change the version number for the first two commands to suit the version you wis
 ```
 $ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.1.tar.gz
 
-$ tar --strip-components=2 -zxvf 1.1.1.tar.gz DebianScript-v.1.1.1/Bash/
+$ tar --strip-components=2 -zxvf 1.1.1.tar.gz DebianScript-1.1.1/Bash/
 
 $ sudo chown -R `whoami`:`whoami` ./
 
