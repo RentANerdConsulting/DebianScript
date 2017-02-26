@@ -161,7 +161,6 @@ plexdir=""
 ######################################
 
 versionCheck;
-getExistingConfig;
 preInstall;
 mainMenu;
 
