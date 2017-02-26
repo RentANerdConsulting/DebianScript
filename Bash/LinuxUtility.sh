@@ -35,7 +35,7 @@ useraddoops=0
 
 menuselection=1
 declare -a menuoptions=('1 - ownCloud functions' '2 - Samba functions' '3 - Plex functions' '4 - Webmin Functions' '5 - VirtualBox Functions' '6 - System utilities' '7 - Firewall options' '8 - User management' '9 - Certificate management' '0 - Exit without reboot' '00 - Exit and reboot.')
-declare -a owncloudmenuoptions=('1 - Install and configure ownCloud' '2 - Upgrade ownCloud after package update' '3 - ' '4 - Uninstall ownCloud' '00 - Return to Main Menu')
+declare -a owncloudmenuoptions=('1 - Install and configure ownCloud' '2 - Upgrade ownCloud after package update' '3 - Set secure file permissions' '4 - Revoke secure file permissions' '5 - Turn on maintenance mode' '6 - Turn off maintenance mode' '7 - Uninstall ownCloud' '00 - Return to Main Menu')
 declare -a sambamenuoptions=('1 - Install and configure Samba file sharing' '2 - Add additional Samba users' '3 - Add group share - read only' '4 - Add group share - full access' '5 - Uninstall Samba' '00 - Return to Main Menu')
 declare -a plexmenuoptions=('1 - Install Plex Media Server' '2 - Uninstall Plex Media Server' '00 - Return to Main Menu')
 declare -a webminmenuoptions=('1 - Install Webmin' '2 - Uninstall Webmin' '00 - Return to Main Menu')
