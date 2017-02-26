@@ -34,18 +34,24 @@ useraddoops=0
 ############################################
 
 menuselection=1
-declare -a menuoptions=('1 - Install primary functions' '2 - Uninstall primary functions' '3 - System utilities' '4 - Firewall options' '5 - User management' '6 - Certificate management' '0 - Exit without reboot' '00 - Exit and reboot.')
-declare -a installmenuoptions=('1 - Install and configure ownCloud.' '2 - Install and configure Samba file sharing.' '3 - Install Plex Media Server.' '4 - Install Webmin' '0 - Return to Main Menu')
-declare -a usersmenuoptions=('1 - Add additional administrators.' '2 - Add additional standard users.' '3 - Add additional Samba users' '4 - Display non system user accounts - full detail' '5 - Display non system user accounts - user name only' '6 - Display system user accounts - full detail' '7 - Display system user accounts - user name only' '8 - Display groups - full detail' '9 - Display groups - group names only' '10 - Remove user accounts' '0 - Return to Main Menu')
-declare -a systemmenuoptions=('1 - System cleanup - remove obsolete packages' '2 - System update - update system files and programs' '3 - Upgrade ownCloud after package update' '4 - Update Tripwire database' '5 - List configured cron jobs' '0 - Return to Main Menu')
-declare -a firewallmenuoptions=('1 - Enable Rsync' '2 - Disable Rsync' '3 - Enable NFS' '4 - Disable NFS' '5 - Enable CUPS' '6 - Disable CUPS' '7 - Enable MySQL' '8 - Disable MySQL' '9 - Enable iSCSI' '10 - Disable iSCSI' '11 - Enable Samba' '12 - Disable Samba' '13 - Enable Webmin' '14 - Disable Webmin' '0 - Return to Main Menu')
+declare -a menuoptions=('1 - ownCloud functions' '2 - Samba functions' '3 - Plex functions' '4 - Webmin Functions' '5 - VirtualBox Functions' '6 - System utilities' '7 - Firewall options' '8 - User management' '9 - Certificate management' '0 - Exit without reboot' '00 - Exit and reboot.')
+declare -a owncloudmenuoptions=('1 - Install and configure ownCloud' '2 - Upgrade ownCloud after package update' '3 - Set secure file permissions' '4 - Revoke secure file permissions' '5 - Turn on maintenance mode' '6 - Turn off maintenance mode' '7 - Uninstall ownCloud' '00 - Return to Main Menu')
+declare -a sambamenuoptions=('1 - Install and configure Samba file sharing' '2 - Add additional Samba users' '3 - Add group share - read only' '4 - Add group share - full access' '5 - Uninstall Samba' '00 - Return to Main Menu')
+declare -a plexmenuoptions=('1 - Install Plex Media Server' '2 - Uninstall Plex Media Server' '00 - Return to Main Menu')
+declare -a webminmenuoptions=('1 - Install Webmin' '2 - Uninstall Webmin' '00 - Return to Main Menu')
+declare -a virtualboxmenuoptions=('1 - Install VirtualBox and PHPVirtualBox' '2 - Uninstall VirtualBox and PHPVirtualBox' '00 - Return to Main Menu')
+declare -a usersmenuoptions=('1 - Add additional administrators.' '2 - Add additional standard users.' '3 - Display non system user accounts - full detail' '4 - Display non system user accounts - user name only' '5 - Display system user accounts - full detail' '6 - Display system user accounts - user name only' '7 - Display groups - full detail' '8 - Display groups - group names only' '9 - Remove user accounts' '00 - Return to Main Menu')
+declare -a systemmenuoptions=('1 - System cleanup - remove obsolete packages' '2 - System update - update system files and programs' '3 - Update Tripwire database' '4 - List configured cron jobs' '00 - Return to Main Menu')
+declare -a firewallmenu1options=('1 - Enable Rsync' '2 - Disable Rsync' '3 - Enable NFS' '4 - Disable NFS' '5 - Enable CUPS' '6 - Disable CUPS' '7 - Enable MySQL' '8 - Disable MySQL' '9 - Enable iSCSI' '10 - Disable iSCSI' '0 - Next' '00 - Return to Main Menu')
+declare -a firewallmenu2options=('1 - Enable Samba' '2 - Disable Samba' '3 - Enable Webmin' '4 - Disable Webmin' '5 - Enable RDP' '6 - Disable RDP' '7 - Enable PHPVirtualBox' '8 - Disable PHPVirtualBox' '00 - Return to Previous Menu')
+declare -a certmanagemenuoptions=('1 - Change installed SSL certificates' '2 - Add new Certificate Authority' '3 - Generate SSH RSA keys locally using ssh-keygen - good' '4 - Generate SSH RSA keys using PuTTYgen - better' '5 - Disable password login via SSH' '00 - Return to Main Menu')
+
 declare -a cleanupmenu=('1 - Revert recent file changes, then exit.' '2 - Exit without reverting changes.' '3 - Remove last user added, then exit.')
 declare -a certificatemenu=('1 - Generate self-signed certificates' '2 - Use LetsEncrypt to generate and maintain certificates')
-declare -a uninstallmenuoptions=('1 - Uninstall ownCloud' '2 - Uninstall Samba' '3 - Uninstall Plex Media Server' '4 - Uninstall Webmin' '0 - Return to Main Menu')
+
 declare -a removeowncloudmenuoptions=('1 - Uninstall ownCloud application and MariaDB' '2 - Uninstall ownCloud application, all pre-requisites, database, and stored data' '0 - Return to Uninstall Menu')
 declare -a removesambamenuoptions=('1 - Uninstall Samba application' '2 - Uninstall Samba application, pre-requisites, and data' '0 - Return to Uninstall Menu')
 declare -a removeplexmenuoptions=('1 - Uninstall Plex application' '2 - Uninstall Plex application, pre-requisites, and data' '0 - Return to Uninstall Menu')
-declare -a certmanagemenuoptions=('1 - Change installed certificates' '2 - Add new Certificate Authority' '0 - Return to Main Menu')
 
 ###### Certificate variables ######
 ###################################
@@ -58,40 +64,53 @@ letsencrypt=0
 combinedcert=0
 
 
-###### Universal variables and arrays ######
-############################################
+###### Universal variables ######
+#################################
 
 errortrack="0"
 uninstall=""
 virtualbox=""
-nicname=""
-subnetip=""
-subnetmask=""
 lastuser=""
-fqdn=""
 smtplogin=""
-hostname=""
 currentuser=""
 clientname=""
 tzmain=""
 tzcountry=""
 tzlocale=""
-hostedserver=""
 currentversion="1.1.2"
 installedversion=""
 userchoice=""
 physicalsystem=""
-sambadir=""
-plexdir=""
+
+
+###### Network variables ######
+###############################
+
 exthttpport=""
 exthttpsport=""
 inthttpport=""
 inthttpsport=""
+hostedserver=""
+hostname=""
+fqdn=""
+nicname=""
+subnetip=""
+subnetmask=""
+
+
+###### Filesystem variables ######
+##################################
+
+sambadir=""
+plexdir=""
+
+
 
 
 # Import functions
 . $PWD/scripts/ErrorCleanupFunctions.cfg
 . $PWD/scripts/ErrorFunctions.cfg
+. $PWD/scripts/GUIOptions.cfg
 . $PWD/scripts/TimezoneFunctions.cfg
 . $PWD/scripts/VirtualBoxFunctions.cfg
 . $PWD/scripts/NetworkInterfaceFunctions.cfg
@@ -105,6 +124,8 @@ inthttpsport=""
 . $PWD/scripts/UserManagementFunctions.cfg
 . $PWD/scripts/LoginSecurityFunctions.cfg
 . $PWD/scripts/PrimaryFirewall.cfg
+. $PWD/scripts/PHPVirtualBoxFirewall.cfg
+. $PWD/scripts/RDPFirewall.cfg
 . $PWD/scripts/WebminFirewall.cfg
 . $PWD/scripts/RsyncFirewall.cfg
 . $PWD/scripts/NFSFirewall.cfg
