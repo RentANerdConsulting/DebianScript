@@ -1,3 +1,12 @@
+# **Known issues in 1.1.2**
+
+1) In /etc/apache2/sites-avalable/owncloud.conf and /etc/apache2/sites-available/000-default.conf the trailing / was forgotten in the \*.80 virtual host config. This is fixed in the version upgrade function to 1.1.3, and in the 1.1.3 script itself, to be released soon.
+
+2) owncloud virtual host was separated into /etc/apache2/sites-avalable/owncloud.conf and /etc/apache2/conf-avalable/owncloud.conf, mimicing the Turnkey appliance configuration. This causes an issue hosting more than one host (netdata.foo.bar and owncloud.foo.bar), as it overrides any site and forwards to the owncloud site. This is fixed in the version upgrade function to 1.1.3, and in the 1.1.3 script itself, to be released soon.
+
+3) There is a loop in the email/logwatch configuration function which causes a slight slowdown each time the script is run after getting to the menu the first time. It repeatedly enters the directory for the apache logs into /usr/share/logwatch/default.conf/logwatch.conf. This is fixed in the version upgrade function to 1.1.3, and in the 1.1.3 script itself, to be released soon.
+
+
 # DebianScript
 Bash Script for hardening Ubuntu and Debian linux distributions, installing major server functions, and configuring them.
 
