@@ -40,6 +40,17 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 17) ModSecurity not included due the immense hassle of fine tuning it for each application.
   
   
+# **System Maintenance**
+
+1) System update.
+
+2) System cleanup - Remove old and obsolete packages (including old kernels), rebuild initramfs, update grub.
+
+3) Display currently configured cronjobs.
+
+4) Manually update Tripwire.
+
+
 # **ownCloud**
   
 1) Installation and configuration of Apache, MariaDB, PHP7.0, and ownCloud.
