@@ -33,7 +33,7 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
   
 14) Apparmor enabled, tune as needed.
   
-15) Tripwire installed, with menu function for updating. Will soon be scripted to update when system updates are run, to reduce false positives.
+15) Tripwire installed, with menu function for updating. Database updated when system updates are run, to reduce false positives.
   
 16) PSAD not yet included.
   
