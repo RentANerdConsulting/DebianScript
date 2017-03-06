@@ -1,4 +1,4 @@
-# **Version 1.1.2**
+# **Version 1.1.3**
 
 **Security**
 
@@ -12,6 +12,15 @@
 **Plex**
 
 
+**Netdata**
+
+
+**VirtualBox and PHPVirtualBox**
+
+
 **User Management**
+
+
+**IPTables Firewall**
 
 
