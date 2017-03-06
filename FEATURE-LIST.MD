@@ -70,4 +70,8 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 
 **IPTables Firewall**
 
+Stateful drop-all-by-default firewall rules:
+
+Baseline allowed:
+
 
