@@ -142,9 +142,9 @@ CardDAV - outbound - toggle option
   
   
 **Samba installed New:**
-
-
-**Misc - enabled via menu, off by default**
+  
+  
+**Misc - enabled via menu, off by default:**
 
 Rsync - All - toggle option
 
