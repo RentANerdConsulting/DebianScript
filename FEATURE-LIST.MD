@@ -1,5 +1,6 @@
 # **Version 1.1.3**
 
+
 **Security**
 
 Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-1604-lts-server-part-1-basics
@@ -39,6 +40,7 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 17) ModSecurity not included due the immense hassle of fine tuning it for each application.
 
 
+
 **ownCloud**
 
 1) Installation and configuration of Apache, MariahDB
@@ -46,6 +48,7 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 2) Secure file settings enabled or disabled as needed before and after updates.
 
 3) Menu functions to run manual update after package update, disable or enable maintenance mode, and file permissions.
+
 
 
 **Samba**
