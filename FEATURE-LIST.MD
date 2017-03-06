@@ -142,3 +142,18 @@ CardDAV - outbound - toggle option
   
   
 **Samba installed New:**
+
+
+**Misc - enabled via menu, off by default**
+
+Rsync - All - toggle option
+
+NFS - All Local Network only - toggle option
+
+RDP - incoming - toggle option
+
+iSCSI - All - toggle option
+
+MySQL - All - toggle option
+
+CUPS - inbound Local Network only - toggle option
