@@ -43,11 +43,13 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 
 **ownCloud**
 
-1) Installation and configuration of Apache, MariahDB
+1) Installation and configuration of Apache, MariaDB, PHP7.0, and ownCloud.
 
 2) Secure file settings enabled or disabled as needed before and after updates.
 
 3) Menu functions to run manual update after package update, disable or enable maintenance mode, and file permissions.
+
+4) Automatic forwarding of all http requests to https, Self-Signed key generation, LetsEncrypt configuration, or import of existing certificates.
 
 
 
