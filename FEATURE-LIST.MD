@@ -1,7 +1,7 @@
 # **Version 1.1.3**
 
   
-**Security**
+# **Security**
   
 Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-1604-lts-server-part-1-basics
   
@@ -40,7 +40,7 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 17) ModSecurity not included due the immense hassle of fine tuning it for each application.
   
   
-**ownCloud**
+# **ownCloud**
   
 1) Installation and configuration of Apache, MariaDB, PHP7.0, and ownCloud.
   
@@ -51,27 +51,27 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 4) Automatic forwarding of all http requests to https, Self-Signed key generation, LetsEncrypt configuration, or import of existing certificates.
   
   
-**Samba**
+# **Samba**
   
   
-**Plex**
+# **Plex**
   
   
-**Netdata**
+# **Netdata**
   
   
-**VirtualBox and PHPVirtualBox**
+# **VirtualBox and PHPVirtualBox**
   
   
-**User Management**
+# **User Management**
   
   
-**IPTables Firewall**
+# **IPTables Firewall**
   
 Configured for primary NIC only, can be changed to segment traffic for local and external to handled by different NICs
   
   
-Stateful drop-all-by-default firewall rules:
+**Stateful drop-all-by-default firewall rules:**
 
 Established and Related - All
 
@@ -84,7 +84,7 @@ Local Network ICMP - All, outbound and established only out of LAN
 Local Network UDP - All, outbound and established only out of LAN
   
   
-Baseline allowed New:
+**Baseline allowed New:**
 
 DNS - outbound
 
@@ -113,7 +113,7 @@ Logging enabled
 Invalid packets dropped
   
   
-ownCloud installed:
+**ownCloud installed:**
 
 HTTP & HTTPS - All
 
@@ -130,4 +130,4 @@ WebDAV - outbound - toggle option
 CardDAV - outbound - toggle option
   
   
-Samba installed:
+**Samba installed:**
