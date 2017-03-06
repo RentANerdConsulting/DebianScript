@@ -150,17 +150,17 @@ Invalid packets dropped
 
 HTTP & HTTPS - All
 
-FTPS - Outbound - toggle option
+FTPS - Outbound
 
-SLDAP - outbound - toggle option
+SLDAP - outbound
 
-LDAP - outbound - toggle option
+LDAP - outbound
 
-CalDAV - All - toggle option
+CalDAV - All
 
-WebDAV - outbound - toggle option
+WebDAV - outbound
 
-CardDAV - outbound - toggle option
+CardDAV - outbound
   
   
 **Samba installed New:**
@@ -181,3 +181,7 @@ iSCSI - All - toggle option
 MySQL - All - toggle option
 
 CUPS - inbound Local Network only - toggle option
+
+JBOSS - toggle option
+
+Wildfly - toggle option
