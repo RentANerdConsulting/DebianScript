@@ -113,7 +113,7 @@ Logging enabled
 Invalid packets dropped
   
   
-**ownCloud installed:**
+**ownCloud installed New:**
 
 HTTP & HTTPS - All
 
@@ -130,4 +130,4 @@ WebDAV - outbound - toggle option
 CardDAV - outbound - toggle option
   
   
-**Samba installed:**
+**Samba installed New:**
