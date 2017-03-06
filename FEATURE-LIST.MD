@@ -75,6 +75,28 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
   
   
 # **User Management**
+
+1) Add new administrators
+
+2) Add new standard users
+
+3) Display user accounts - full detail or names only
+
+4) Display System user accounts - full detail or names only
+
+5) Display groups - full detail or names only
+
+
+  
+# **Certificate Management**
+
+1) Renew or replace SSL LetsEncrypt certificates
+
+2) Generate and configure SSH RSA keys via ssh-keygen - good
+
+3) Generate and configure SSH RSA keys via PuTTYgen - BETTER
+
+4) Disable password SSH login after generating SSH RSA keys
   
   
 # **IPTables Firewall**
@@ -143,6 +165,8 @@ CardDAV - outbound - toggle option
   
 **Samba installed New:**
   
+
+
   
 **Misc - enabled via menu, off by default:**
 
