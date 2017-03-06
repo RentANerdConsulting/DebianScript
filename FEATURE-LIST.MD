@@ -1,6 +1,7 @@
 # **Version 1.1.3**
 
 **Security**
+
 Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-1604-lts-server-part-1-basics
 
 1) Shared memory secured.
