@@ -11,38 +11,36 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
   
 3) Admins created to admin group, su limited to admin group.
   
-4) SSH root login disabled, SSH-1 disabled.
+4) SSH root login disabled, SSH-1 disabled, SSH login restricted to admin group
   
 5) IP Spoofing protection, Ignore ICMP broadcast requests, Disable source packet routing, Ignore send redirects, Block SYN attacks, Log Martians, Ignore ICMP redirects, Ignore Directed pings (Edit to suit your requirements)
   
-6) IP Spoofing protection.
+6) PHP secured.
   
-7) PHP secured.
+7) Apache secured.
   
-8) Apache secured.
+8) Mod_evasive.
   
-9) Mod_evasive.
+9) Fail2ban enabled per service install, emails currently enabled per blocked attempt. Disable emails if this drives you nuts, a summary is included in logwatch emails.
   
-10) Fail2ban enabled per service install, emails currently enabled per blocked attempt. Disable emails if this drives you nuts, a summary is included in logwatch emails.
+10) Chkrootkit and rkhunter installed and run daily, rkhunter updated when system updates applied.
   
-11) Chkrootkit and rkhunter installed and run daily, rkhunter updated when system updates applied.
+11) Nmap for port checks.
   
-12) Nmap for port checks.
+12) LogWatch configured for daily emails.
   
-13) LogWatch configured for daily emails.
+13) Apparmor enabled, tune as needed.
   
-14) Apparmor enabled, tune as needed.
+14) Tripwire installed, with menu function for updating. Database updated when system updates are run, to reduce false positives.
   
-15) Tripwire installed, with menu function for updating. Database updated when system updates are run, to reduce false positives.
+15) PSAD not yet included.
   
-16) PSAD not yet included.
-  
-17) ModSecurity not included due the immense hassle of fine tuning it for each application.
+16) ModSecurity not included due the immense hassle of fine tuning it for each application.
   
   
 # **System Maintenance**
 
-1) System update.
+1) System update, tripwire database updated after updates.
 
 2) System cleanup - Remove old and obsolete packages (including old kernels), rebuild initramfs, update grub.
 
@@ -69,11 +67,33 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
   
   
 # **Netdata**
+
+1) Installation and configuration.
+
+2) Enables ksm to conserve memory usage
+
+3) Set to store 4 hours of data for monitoring purposes
+
+4) Configured for use of fqdn format URL, eg netdata.foo.bar, user sets hostname.
+
+5) HTTP requests automatically forwarded to HTTPS, user and password created during install required for access.
+
+6) Site set to display system name in hostname@domain to make it easier to identify what system is being accessed if multiple servers exist for the same domain.
+
+7) Configured to start at boot.
   
   
 # **VirtualBox and PHPVirtualBox**
   
-  
+1) Installation and configuration.
+
+2) Configured for use of fqdn format URL, eg phpvirtualbox.foo.bar, user sets hostname.
+
+3) HTTP requests automatically forwarded to HTTPS.
+
+4) Option to select and start VM's at boot from the script menu currently in the works.
+
+
 # **User Management**
 
 1) Add new administrators
@@ -97,11 +117,13 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 3) Generate and configure SSH RSA keys via PuTTYgen - BETTER
 
 4) Disable password SSH login after generating SSH RSA keys
+
+5) Self-signed certs are created as wildcard, to simplify hosting multiple sites, and imported certs currently need to be as well. LetsEncrypt certs are automatically renewed and new sites added during installs.
   
   
 # **IPTables Firewall**
   
-Configured for primary NIC only, can be changed to segment traffic for local and external to handled by different NICs
+Configured for primary NIC only, can be changed to segment traffic for local and external to handled by different NICs, and this will be included in future versions.
   
   
 **Stateful drop-all-by-default firewall rules:**
