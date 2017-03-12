@@ -3,8 +3,46 @@
 
 # **Initial System Configuration**
 
+Translates user names, groups, hostnames, etc, into lowercase, to prevent issues from mismatched casing.
+
+Parses subnet, mask, and network type based on IP. (We recommend leaving the NIC set to acquire it's configuration from the router via DHCP, and setting a static IP at the router.)
+
+Keeps flag files to ensure functions are not repeatedly run if installations from the menu share functions.
+
+Error checking, failed commands will report line of script that failed, and if files were altered, offer to revert them back to their original state before the failed function ran.
+
+Pulls all relevant information from the flag files when loading the script.
+
+
 Prompts and automatic configuration based on responses for:
-1) 
+
+1) System hostname
+
+2) TimeZone settings
+
+3) HTTP and HTTPS router port forwarding (Only use defaults internally at your system. We haven't worked a complete alteration into the script yet.) This will set auto HTTP forwarding to the relevant port for HTTPS.
+
+4) Prompt to verify that the system is a physical machine during initial system configuration. If not a physical system, VirtualBox will not install from this script.
+
+5) Automatic detection and kernel configuration for virtualization technologies of AMD and Intel, with a prompt during initial configuration to allow a reboot to ensure these are enabled in bios. If they are not, but should be, a reinstall of the OS is recommended for systems with multiple hard disk controllers, as enabling these technologies may alter the device location information and require more time than a base level reinstall to repair.
+
+6) **(Currently defaults to Server and CLI)** Check to see if server or Desktop, installing GUI by default for Desktop, offering several options, and offers CLI or GUI interfaces for servers.
+
+7) Uncomments source list entries for access to source repos and a wider variety of software.
+
+8) Runs initial updates so the system starts out up to date.
+
+9) Installs an array of system utilities, as well as build-essentials.
+
+10) Passwords set as needed throughout, recommended method of generation and storage is Keepass 2.x with GoogleSync or equivalent synchronization plugin.
+
+11) System hardening based on installed applications. **See Security heading**
+
+12) Default DROP ALL firewall. Updates coming soon to fully comply with industry standards for troubleshooting purposes.
+
+13) Email aliases set so admins get root emails.
+
+14) Root user account assigned password stored and generated in Keepass. There is almost never a reason to actually need direct access to the root account, but it is secured and available if necessary.
 
 
 # **Security**
@@ -96,7 +134,7 @@ Prompts and automatic configuration based on responses for:
   
 # **Netdata**
 
-1) Installation and configuration.
+1) Installation and configuration of Apache, MariaDB, PHP7.0, and Netdata.
 
 2) Enables ksm to conserve memory usage
 
@@ -117,7 +155,7 @@ Prompts and automatic configuration based on responses for:
   
 # **VirtualBox and PHPVirtualBox**
   
-1) Installation and configuration.
+1) Installation and configuration of Apache, MariaDB, PHP7.0, VirtualBox, and phpvirtualbox.
 
 2) Configured for use of fqdn format URL, eg phpvirtualbox.foo.bar, user sets hostname.
 
@@ -133,11 +171,7 @@ Prompts and automatic configuration based on responses for:
 
 8) Download and installation of Extention Pack during installation.
 
-9) Prompt to verify that the system is a physical machine during initial system configuration. If not a physical system, VirtualBox will not install from this script.
-
-10) Automatic detection and kernel configuration for virtualization technologies of AMD and Intel, with a prompt during initial configuration to allow a reboot to ensure these are enabled in bios. If they are not, but should be, a reinstall of the OS is recommended for systems with multiple hard disk controllers, as enabling these technologies may alter the device location information and require more time than a base level reinstall to repair.
-
-11) Hostname automatically added in /etc/hosts during installation.
+9) Hostname automatically added in /etc/hosts during installation.
 
 # **User Management**
 
@@ -150,6 +184,12 @@ Prompts and automatic configuration based on responses for:
 4) Display System user accounts - full detail or names only
 
 5) Display groups - full detail or names only
+
+6) Check to see if a user exists
+
+7) Check to see if a group exists
+
+8) Check to see if a user is a member of a group
 
   
 # **Certificate Management**
