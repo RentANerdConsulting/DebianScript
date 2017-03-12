@@ -1,9 +1,13 @@
 # **Version 1.1.3**
 
-  
+
+# **Initial System Configuration**
+
+Prompts and automatic configuration based on responses for:
+1) 
+
+
 # **Security**
-  
-Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-1604-lts-server-part-1-basics
   
 1) Shared memory secured.
   
@@ -11,9 +15,9 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
   
 3) Admins created to admin group, su limited to admin group.
   
-4) SSH root login disabled, SSH-1 disabled, SSH login restricted to admin group
+4) SSH root login disabled, SSH-1 disabled, SSH login restricted to admin group.
   
-5) IP Spoofing protection, Ignore ICMP broadcast requests, Disable source packet routing, Ignore send redirects, Block SYN attacks, Log Martians, Ignore ICMP redirects, Ignore Directed pings (Edit to suit your requirements)
+5) IP Spoofing protection, Ignore ICMP broadcast requests, Disable source packet routing, Ignore send redirects, Block SYN attacks, Log Martians, Ignore ICMP redirects, Ignore Directed pings (Edit to suit your requirements).
   
 6) PHP secured.
   
@@ -32,10 +36,12 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 13) Apparmor enabled, tune as needed.
   
 14) Tripwire installed, with menu function for updating. Database updated when system updates are run, to reduce false positives.
+
+15) Menu option to reconfigure SSH to use port 1022 instead of 22, to drastically reduce malicious access attempts.
   
-15) PSAD not yet included.
+16) PSAD not yet included.
   
-16) ModSecurity not included due the immense hassle of fine tuning it for each application.
+17) ModSecurity not included due the immense hassle of fine tuning it for each application.
   
   
 # **System Maintenance**
@@ -55,16 +61,38 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
   
 2) Secure file settings enabled or disabled as needed before and after updates.
   
-3) Menu functions to run manual update after package update, disable or enable maintenance mode, and file permissions.
+3) Menu functions to run manual update after package update, disable or enable maintenance mode, and set or unset secure file permissions for before and after manual maintenance.
   
 4) Automatic forwarding of all http requests to https, Self-Signed key generation, LetsEncrypt configuration, or import of existing certificates.
+
+5) Installation of modules needed for the majority of functions owncloud supports, to allow further customization. Please let us know if you find something we've missed.
+
+6) Configuration of firewall rules to support owncloud and the majority of features it supports.
+
+7) Hostname automatically added in /etc/hosts during installation.
   
   
 # **Samba**
   
-  
+1) Primary installation and configuration of basic file sharing, firewalled for local network only in IPv4, disabled currently in IPv6.
+
+2) Due to local network only configuration, it is disabled for 3rd party hosted servers. A server hosted by Google isn't likely going to have a local network that you should be using it on.
+
+3) Configuration of a primary directory for shares to be located. Additional users can be added to the Samba group, and shares created under the parent storage directory.
+
+4) Verifcation that new Samba users are not already in the group, that they exist at all, and the option to create standard or administrator users if they do not already exist.
+
+5) In the works: Creation of group read only and full access shares, with new groups being created as necessary, along with the option to add users to said groups and shares.
+
+
 # **Plex**
-  
+
+1) Installation of Plex Media Server and requirements.
+
+2) Creation of parent folder for media storage, with subfolders Movies, Music, and TV created as well.
+
+3) Firewall rules to support full access via Plex login site, local media server access, etc.
+
   
 # **Netdata**
 
@@ -74,13 +102,17 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 
 3) Set to store 4 hours of data for monitoring purposes
 
-4) Configured for use of fqdn format URL, eg netdata.foo.bar, user sets hostname.
+4) Configured for use of FQDN format URL, eg netdata.foo.bar, user sets hostname, domain is determined by system wide FQDN.
 
 5) HTTP requests automatically forwarded to HTTPS, user and password created during install required for access.
 
 6) Site set to display system name in hostname@domain to make it easier to identify what system is being accessed if multiple servers exist for the same domain.
 
 7) Configured to start at boot.
+
+8) Further customization is recommended, as it pulls a tooooooooooon of information, most of it not necessary in many cases, with alert values that are a bit too sensitive IMHO.
+
+9) Hostname automatically added in /etc/hosts during installation.
   
   
 # **VirtualBox and PHPVirtualBox**
@@ -93,6 +125,19 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 
 4) Option to select and start VM's at boot from the script menu currently in the works.
 
+5) Prompt to select directory for VM storage during install.
+
+6) Displays current hostnames used by the system before hostname selection, and checks to ensure that a duplicate hostname has not been selected.
+
+7) Configured to send ACPI shutdown signal to active VMs and wait up to 30 sec for them to complete shutdown, in case reboot or power cycle is required.
+
+8) Download and installation of Extention Pack during installation.
+
+9) Prompt to verify that the system is a physical machine during initial system configuration. If not a physical system, VirtualBox will not install from this script.
+
+10) Automatic detection and kernel configuration for virtualization technologies of AMD and Intel, with a prompt during initial configuration to allow a reboot to ensure these are enabled in bios. If they are not, but should be, a reinstall of the OS is recommended for systems with multiple hard disk controllers, as enabling these technologies may alter the device location information and require more time than a base level reinstall to repair.
+
+11) Hostname automatically added in /etc/hosts during installation.
 
 # **User Management**
 
@@ -105,7 +150,6 @@ Many settings found at: https://www.thefanclub.co.za/how-to/how-secure-ubuntu-16
 4) Display System user accounts - full detail or names only
 
 5) Display groups - full detail or names only
-
 
   
 # **Certificate Management**
