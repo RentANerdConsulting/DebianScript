@@ -69,7 +69,8 @@ plexdir=""
 ###### Variables and arrays for menus ######
 
 menuselection=1
-declare -a menuoptions=('1 - ownCloud functions' '2 - Samba functions' '3 - Plex functions' '4 - Webmin Functions' '5 - VirtualBox Functions' '6 - Netdata Functions' '7 - System utilities' '8 - Firewall options' '9 - User management' '10 - Certificate management' '0 - Exit without reboot' '00 - Exit and reboot.')
+declare -a menuoptions=('1 - ownCloud functions' '2 - Samba functions' '3 - Plex functions' '4 - Webmin Functions' '5 - VirtualBox Functions' '6 - Netdata Functions' '7 - System utilities' '8 - Firewall options' '9 - User management' '10 - Certificate management' '11 - Security management' '0 - Exit without reboot' '00 - Exit and reboot.')
+declare -a secmanagemenuoptions=('1 - Disable password login via SSH' '2 - Generate SSH RSA keys locally using ssh-keygen - good' '3 - Generate SSH RSA keys using PuTTYgen - better' '4 - Switch SSH listen port to 1022 to reduce attacks' '00 - Return to Main Menu')
 declare -a owncloudmenuoptions=('1 - Install and configure ownCloud' '2 - Upgrade ownCloud after package update' '3 - Set secure file permissions' '4 - Revoke secure file permissions' '5 - Turn on maintenance mode' '6 - Turn off maintenance mode' '7 - Uninstall ownCloud' '00 - Return to Main Menu')
 declare -a sambamenuoptions=('1 - Install and configure Samba file sharing' '2 - Add additional Samba users' '3 - Display existing Samba users' '4 - Display existing Samba share groups' '5 - Create Samba share group' '6 - Add existing Samba users to existing share group' '7 - Add group share - read only' '8 - Add group share - full access' '9 - Uninstall Samba' '00 - Return to Main Menu')
 declare -a plexmenuoptions=('1 - Install Plex Media Server' '2 - Uninstall Plex Media Server' '00 - Return to Main Menu')
@@ -82,7 +83,7 @@ declare -a systemmenuoptions=('1 - System cleanup - remove obsolete packages' '2
 declare -a firewallmenu1options=('1 - Enable Rsync' '2 - Disable Rsync' '3 - Enable NFS' '4 - Disable NFS' '5 - Enable CUPS' '6 - Disable CUPS' '7 - Enable MySQL' '8 - Disable MySQL' '9 - Enable iSCSI' '10 - Disable iSCSI' '0 - Next' '00 - Return to Main Menu')
 declare -a firewallmenu2options=('1 - Enable Samba' '2 - Disable Samba' '3 - Enable Webmin' '4 - Disable Webmin' '5 - Enable RDP' '6 - Disable RDP' '7 - Enable PHPVirtualBox' '8 - Disable PHPVirtualBox' '9 - Enable JBOSS' '10 - Disable JBOSS' '0 - Next' '00 - Return to Previous Menu')
 declare -a firewallmenu3options=('1 - Enable Wildfly' '2 - Disable Wildfly' '00 - Return to Previous Menu')
-declare -a certmanagemenuoptions=('1 - Change installed SSL certificates' '2 - Update LetsEncrypt Certificates' '3 - Add new Certificate Authority' '4 - Generate SSH RSA keys locally using ssh-keygen - good' '5 - Generate SSH RSA keys using PuTTYgen - better' '6 - Disable password login via SSH' '00 - Return to Main Menu')
+declare -a certmanagemenuoptions=('1 - Change installed SSL certificates' '2 - Update LetsEncrypt Certificates' '3 - Add new Certificate Authority' '00 - Return to Main Menu')
 
 declare -a cleanupmenu=('1 - Revert recent file changes, then exit.' '2 - Exit without reverting changes.' '3 - Remove last user added, then exit.')
 declare -a certificatemenu=('1 - Generate self-signed certificates' '2 - Use LetsEncrypt to generate and maintain certificates')
