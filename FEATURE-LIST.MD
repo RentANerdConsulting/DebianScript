@@ -13,6 +13,8 @@ Error checking, failed commands will report line of script that failed, and if f
 
 Pulls all relevant information from the flag files when loading the script.
 
+Checks during all installs that hostnames, users, and groups exist or don't as necessary, and if they are already in groups to prevent errors from adding existing users, adding users to groups they are already in, etc. Adding a non-admin user via the menu as an admin will skip the initial user creation and simply add them to the appropriate groups, for instance.
+
 
 Prompts and automatic configuration based on responses for:
 
@@ -22,7 +24,7 @@ Prompts and automatic configuration based on responses for:
 
 3) HTTP and HTTPS router port forwarding (Only use defaults internally at your system. We haven't worked a complete alteration into the script yet.) This will set auto HTTP forwarding to the relevant port for HTTPS.
 
-4) Prompt to verify that the system is a physical machine during initial system configuration. If not a physical system, VirtualBox will not install from this script.
+4) Prompt to verify that the system is a physical machine during initial system configuration. If not a physical system, VirtualBox will not install from this script. If not a physical system, a prompt for if it is a hosted server is displayed, which limits installation of various features that should only be allowed on a local network for security reasons. Also a prompt to determine if the VM is a VirtualBox guest, which allows the installation of the Guest Additions during initial configuration.
 
 5) Automatic detection and kernel configuration for virtualization technologies of AMD and Intel, with a prompt during initial configuration to allow a reboot to ensure these are enabled in bios. If they are not, but should be, a reinstall of the OS is recommended for systems with multiple hard disk controllers, as enabling these technologies may alter the device location information and require more time than a base level reinstall to repair.
 
@@ -76,10 +78,18 @@ Prompts and automatic configuration based on responses for:
 14) Tripwire installed, with menu function for updating. Database updated when system updates are run, to reduce false positives.
 
 15) Menu option to reconfigure SSH to use port 1022 instead of 22, to drastically reduce malicious access attempts.
+
+16) Generate and configure SSH RSA keys via ssh-keygen - good
+
+17) Generate and configure SSH RSA keys via PuTTYgen - BETTER
+
+18) Disable password SSH login after generating SSH RSA keys
+
+19) PSAD not yet included.
   
-16) PSAD not yet included.
-  
-17) ModSecurity not included due the immense hassle of fine tuning it for each application.
+20) ModSecurity not included due the immense hassle of fine tuning it for each application.
+
+
   
   
 # **System Maintenance**
@@ -107,7 +117,7 @@ Prompts and automatic configuration based on responses for:
 
 6) Configuration of firewall rules to support owncloud and the majority of features it supports.
 
-7) Hostname automatically added in /etc/hosts during installation.
+7) Hostname automatically added in /etc/hosts during installation, existing hosts displayed during configuration, and user is allowed to select hostname used, so long as it is not already in use.
   
   
 # **Samba**
@@ -120,7 +130,7 @@ Prompts and automatic configuration based on responses for:
 
 4) Verifcation that new Samba users are not already in the group, that they exist at all, and the option to create standard or administrator users if they do not already exist.
 
-5) In the works: Creation of group read only and full access shares, with new groups being created as necessary, along with the option to add users to said groups and shares.
+5) Creation of group read only and full access shares, with new groups being created as necessary, along with the option to add users to said groups and shares.
 
 
 # **Plex**
@@ -150,7 +160,7 @@ Prompts and automatic configuration based on responses for:
 
 8) Further customization is recommended, as it pulls a tooooooooooon of information, most of it not necessary in many cases, with alert values that are a bit too sensitive IMHO.
 
-9) Hostname automatically added in /etc/hosts during installation.
+9) Hostname automatically added in /etc/hosts during installation, existing hosts displayed during configuration, and user is allowed to select hostname used, so long as it is not already in use.
   
   
 # **VirtualBox and PHPVirtualBox**
@@ -171,38 +181,37 @@ Prompts and automatic configuration based on responses for:
 
 8) Download and installation of Extention Pack during installation.
 
-9) Hostname automatically added in /etc/hosts during installation.
+9) Hostname automatically added in /etc/hosts during installation, existing hosts displayed during configuration, and user is allowed to select hostname used, so long as it is not already in use.
 
 # **User Management**
 
-1) Add new administrators
+1) Add new administrators.
 
-2) Add new standard users
+2) Add new standard users.
 
-3) Display user accounts - full detail or names only
+3) Display user accounts - full detail or names only.
 
-4) Display System user accounts - full detail or names only
+4) Display System user accounts - full detail or names only.
 
-5) Display groups - full detail or names only
+5) Display groups - full detail or names only.
 
-6) Check to see if a user exists
+6) Check to see if a user exists.
 
-7) Check to see if a group exists
+7) Check to see if a group exists.
 
-8) Check to see if a user is a member of a group
+8) Check to see if a user is a member of a group.
 
+9) Check to see if a user is a member of a specific group.
+
+10) Display all groups a user is a member of.
+
+11) Display non-system users of the hopefully human variety.
   
 # **Certificate Management**
 
 1) Renew or replace SSL LetsEncrypt certificates
 
-2) Generate and configure SSH RSA keys via ssh-keygen - good
-
-3) Generate and configure SSH RSA keys via PuTTYgen - BETTER
-
-4) Disable password SSH login after generating SSH RSA keys
-
-5) Self-signed certs are created as wildcard, to simplify hosting multiple sites, and imported certs currently need to be as well. LetsEncrypt certs are automatically renewed and new sites added during installs.
+2) Self-signed certs are created as wildcard, to simplify hosting multiple sites, and imported certs currently need to be as well. LetsEncrypt certs are automatically renewed and new sites added during installs.
   
   
 # **IPTables Firewall**
@@ -271,7 +280,7 @@ CardDAV - outbound
   
 **Samba installed New:**
   
-
+Samba - All local network only - toggle option
 
   
 **Misc - enabled via menu, off by default:**
