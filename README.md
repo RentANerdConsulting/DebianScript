@@ -30,6 +30,14 @@ and you will be prompted for your password when necessary. Do not run as root us
 Change the version number for the first two commands to suit the version you wish to download from the available releases.
   
 ```
+$ sudo mkdir /the-directory-you-want-to-keep-this-script-in
+
+$ cd /the-directory-you-want-to-keep-this-script-in
+
+$ sudo chown -R `whoami`:`whoami` ./
+
+$ sudo chmod -R 770 ./
+
 $ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.2.tar.gz
 
 $ tar --strip-components=2 -zxvf 1.1.2.tar.gz DebianScript-1.1.2/Bash/
