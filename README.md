@@ -1,10 +1,6 @@
-# **Known issues in 1.1.2**
+# **Known issues in 1.1.3**
 
-1) In /etc/apache2/sites-avalable/owncloud.conf and /etc/apache2/sites-available/000-default.conf the trailing / was forgotten in the \*.80 virtualhost config. This is fixed in the version upgrade function to 1.1.3, and in the 1.1.3 script itself, to be released soon.
-
-2) owncloud virtual host was separated into /etc/apache2/sites-avalable/owncloud.conf and /etc/apache2/conf-avalable/owncloud.conf, mimicing the Turnkey appliance configuration. This causes an issue hosting more than one host (netdata.foo.bar and owncloud.foo.bar), as it overrides any site and forwards to the owncloud site. This can be resolved by inserting the contents of /etc/apache2/conf-avalable/owncloud.conf into the \*.443 virtualhost in /etc/apache2/sites-avalable/owncloud.conf. This is fixed in the version upgrade function to 1.1.3, and in the 1.1.3 script itself, to be released soon.
-
-3) There is a loop in the email/logwatch configuration function which causes a slight slowdown each time the script is run after getting to the menu the first time. It repeatedly enters the directory for the apache logs (/var/log/apache2) into /usr/share/logwatch/default.conf/logwatch.conf. This is fixed in the 1.1.3 script, to be released soon.
+1) None so far that we're aware of...
 
 
 # DebianScript
@@ -61,24 +57,6 @@ Once at the main menu, choose exit without reboot, then
 $ sudo chown -R `whoami`:admin ./
 ```
 Once this is done, rerun the script and enjoy.
-
-
-If the script was used to install ownCloud do the next command as well:  (This will eventually be a built in function)
-```
-  $ sudo nano /etc/apache2/mods-available/evasive.conf
-```  
-  add to file
-```
-DOSWhitelist   $SUBNET
-```
-(Use subnet info and proper netmask in place of $SUBNET, using \*’s in place of /24. Example: 192.168.1.0/24 = 192.168.1.\*)
-  and
-  ```
-  DOSSystemCommand "echo 'mod_evasive HTTP Blacklisted %s on $FQDN' | mail -s 'Blocked IP by mod_evasive' root@localhost"
-  ```
-  (Make sure to use the FQDN in place of $FQDN in the above entry, and make sure it’s all on one line.
-  There’s an occasional glitch when copying text)
-   
    
    
 **CRON CONFIGURATION**
