@@ -22,7 +22,7 @@ Prompts and automatic configuration based on responses for:
 
 2) TimeZone settings
 
-3) HTTP and HTTPS router port forwarding (Only use defaults internally at your system. We haven't worked a complete alteration into the script yet.) This will set auto HTTP forwarding to the relevant port for HTTPS.
+3) HTTP and HTTPS router port forwarding (Only use defaults internally at your system. We haven't worked a complete alteration into the script yet.) This will set auto HTTP forwarding to the relevant port for HTTPS. NOTE: This gets a little quirky if multiple services are hosted, say Netdata and ownCloud, and your ports are 880 and 3443 on your router, but 80 and 443 in the site confs.
 
 4) Prompt to verify that the system is a physical machine during initial system configuration. If not a physical system, VirtualBox will not install from this script. If not a physical system, a prompt for if it is a hosted server is displayed, which limits installation of various features that should only be allowed on a local network for security reasons. Also a prompt to determine if the VM is a VirtualBox guest, which allows the installation of the Guest Additions during initial configuration.
 
