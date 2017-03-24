@@ -54,6 +54,9 @@ $ cd /directory-you-chose
   
 $ ./LinuxUtility.sh
 ```
+Immediately after the IPTables configuration and setting the firewall rules, the script will appear to hang. It's normal, just press enter to see the main menu.
+  
+  
 Once at the main menu, choose exit without reboot, then 
 ```
 $ sudo chown -R `whoami`:admin ./
