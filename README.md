@@ -6,6 +6,8 @@
 # DebianScript
 Bash Script for hardening Ubuntu and Debian linux distributions, installing major server functions, and configuring them.
 
+**This script currently assumes a fresh installation of Ubuntu Server 16.04, with only SSH installed as an option.**
+
 **This script is provided as-is. Use it at your own risk. It has been tested thoroughly, but we can't
 prepare for every possible issue or configuration.**
 
