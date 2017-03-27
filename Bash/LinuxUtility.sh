@@ -24,6 +24,12 @@ inthttpsport=""
 domainname=""
 hostname=""
 fqdn=""
+# names for site conf files: 0-default, 1-default-ssl, 2-owncloud, etc
+# 0-default
+# 1-default-ssl
+# 2-owncloud
+# 3-netdata-ssl
+# 4-phpvirtualbox-ssl
 
 
 ###### Variables for system role functions ######
@@ -39,6 +45,7 @@ physicalsystem=""
 ocdbpass=""
 ocadminpass=""
 ochostname=""
+
 
 ###### Netdata variables ######
 
@@ -64,6 +71,7 @@ sambadir=""
 ###### Plex variables ######
 
 plexdir=""
+plexpass=""
 
 
 ###### Variables and arrays for menus ######
@@ -114,7 +122,7 @@ clientname=""
 tzmain=""
 tzcountry=""
 tzlocale=""
-currentversion="1.1.3"
+currentversion="1.1.4"
 installedversion=""
 userchoice=""
 
