@@ -18,7 +18,7 @@ Checks during all installs that hostnames, users, and groups exist or don't as n
 
 Prompts and automatic configuration based on responses for:
 
-1) System hostname
+1) System and hosted site hostnames
 
 2) TimeZone settings
 
@@ -89,6 +89,8 @@ Prompts and automatic configuration based on responses for:
   
 20) ModSecurity not included due the immense hassle of fine tuning it for each application.
 
+21) DKIM configuration and support - currently requires public keys to be added by user to DNS txt entries.
+
 
   
   
@@ -101,6 +103,13 @@ Prompts and automatic configuration based on responses for:
 3) Display currently configured cronjobs.
 
 4) Manually update Tripwire.
+
+
+# **PHPMyAdmin**
+
+1) Installation and configuration.
+
+2) Dual logins, with a single user for the application itself, and a separate site access login, to allow use of Fail2Ban and to provide addtional security. Additional users can be added to the site access list via a menu entry.
 
 
 # **ownCloud**
@@ -161,6 +170,8 @@ Prompts and automatic configuration based on responses for:
 8) Further customization is recommended, as it pulls a tooooooooooon of information, most of it not necessary in many cases, with alert values that are a bit too sensitive IMHO.
 
 9) Hostname automatically added in /etc/hosts during installation, existing hosts displayed during configuration, and user is allowed to select hostname used, so long as it is not already in use.
+
+10) Fail2ban configured to catch repeated attacks.
   
   
 # **VirtualBox and PHPVirtualBox**
@@ -182,6 +193,9 @@ Prompts and automatic configuration based on responses for:
 8) Download and installation of Extention Pack during installation.
 
 9) Hostname automatically added in /etc/hosts during installation, existing hosts displayed during configuration, and user is allowed to select hostname used, so long as it is not already in use.
+
+10) Dual logins, with a single user for the application itself, and a separate site access login, to allow use of Fail2Ban and to provide addtional security. Additional users can be added to the site access list via a menu entry.
+
 
 # **User Management**
 
@@ -207,6 +221,7 @@ Prompts and automatic configuration based on responses for:
 
 11) Display non-system users of the hopefully human variety.
   
+  
 # **Certificate Management**
 
 1) Renew or replace SSL LetsEncrypt certificates
@@ -220,6 +235,8 @@ Configured for primary NIC only, can be changed to segment traffic for local and
   
   
 **Stateful drop-all-by-default firewall rules:**
+
+**Drop was chosen over Reject to reduce the effect of DDOS and DOS attacks on small businesses with limited upstream ISP bandwidth**
 
 Established and Related - All
 
