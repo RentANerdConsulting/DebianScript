@@ -1,4 +1,4 @@
-# **Known issues in 1.1.3**
+# **Known issues in 1.1.4**
 
 1) None so far that we're aware of...
 
@@ -34,9 +34,9 @@ $ sudo chown -R `whoami`:`whoami` ./
 
 $ sudo chmod -R 770 ./
 
-$ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.2.tar.gz
+$ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.4.tar.gz
 
-$ tar --strip-components=2 -zxvf 1.1.2.tar.gz DebianScript-1.1.2/Bash/
+$ tar --strip-components=2 -zxvf 1.1.4.tar.gz DebianScript-1.1.4/Bash/
 
 $ sudo chown -R `whoami`:`whoami` ./
 
