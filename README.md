@@ -1,12 +1,10 @@
-# **Known issues in 1.1.3**
+# **Known issues in 1.1.4**
 
 1) None so far that we're aware of...
 
 
 # DebianScript
 Bash Script for hardening Ubuntu and Debian linux distributions, installing major server functions, and configuring them.
-
-**This script currently assumes a fresh installation of Ubuntu Server 16.04, with only SSH installed as an option.**
 
 **This script is provided as-is. Use it at your own risk. It has been tested thoroughly, but we can't
 prepare for every possible issue or configuration.**
@@ -36,9 +34,9 @@ $ sudo chown -R `whoami`:`whoami` ./
 
 $ sudo chmod -R 770 ./
 
-$ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.3.tar.gz
+$ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.4.tar.gz
 
-$ tar --strip-components=2 -zxvf 1.1.3.tar.gz DebianScript-1.1.3/Bash/
+$ tar --strip-components=2 -zxvf 1.1.4.tar.gz DebianScript-1.1.4/Bash/
 
 $ sudo chown -R `whoami`:`whoami` ./
 
@@ -54,9 +52,6 @@ $ cd /directory-you-chose
   
 $ ./LinuxUtility.sh
 ```
-Immediately after the IPTables configuration and setting the firewall rules, the script will appear to hang. It's normal, just press enter to see the main menu.
-  
-  
 Once at the main menu, choose exit without reboot, then 
 ```
 $ sudo chown -R `whoami`:admin ./
