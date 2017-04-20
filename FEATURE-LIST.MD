@@ -3,6 +3,8 @@
 
 # **Initial System Configuration**
 
+Uses Dialog for Main Menus.
+
 Translates user names, groups, hostnames, etc, into lowercase, to prevent issues from mismatched casing.
 
 Parses subnet, mask, and network type based on IP. (We recommend leaving the NIC set to acquire it's configuration from the router via DHCP, and setting a static IP at the router.)
