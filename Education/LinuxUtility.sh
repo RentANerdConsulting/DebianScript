@@ -130,7 +130,7 @@ clientname=""
 tzmain=""
 tzcountry=""
 tzlocale=""
-currentversion="1.1.5"
+currentversion="1.1.6"
 installedversion=""
 userchoice=""
 
