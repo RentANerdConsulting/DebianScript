@@ -1,4 +1,4 @@
-# **Version 1.1.5**
+# **Version 1.1.6**
 
 
 # **Initial System Configuration**
@@ -188,9 +188,9 @@ Prompts and automatic configuration based on responses for:
 
 6) Displays current hostnames used by the system before hostname selection, and checks to ensure that a duplicate hostname has not been selected.
 
-7) Configured to send ACPI shutdown signal to active VMs and wait up to 30 sec for them to complete shutdown, in case reboot or power cycle is required. (Currently broken due to Ubuntu Repo version being out of date and causing incompatibilities. Will be resolved in 1.1.6)
+7) Configured to send ACPI shutdown signal to active VMs and wait up to 30 sec for them to complete shutdown, in case reboot or power cycle is required. (Currently broken due to Ubuntu Repo version being out of date and causing incompatibilities. Will be resolved in 1.1.7)
 
-8) Download and installation of Extention Pack during installation. (Will be updated to suit PPA version in 1.1.6)
+8) Download and installation of Extention Pack during installation. (Will be updated to suit PPA version in 1.1.7)
 
 9) Hostname automatically added in /etc/hosts during installation, existing hosts displayed during configuration, and user is allowed to select hostname used, so long as it is not already in use.
 
