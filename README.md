@@ -1,4 +1,4 @@
-# **Known issues in 1.1.5**
+# **Known issues in 1.1.6**
 
 1) VM Autostart has been removed, as this is broken currently. Will re-add once the issue is resolved.
 
@@ -34,9 +34,9 @@ $ sudo chown -R `whoami`:`whoami` ./
 
 $ sudo chmod -R 770 ./
 
-$ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.5.tar.gz
+$ wget https://github.com/RentANerdConsulting/DebianScript/archive/1.1.6.tar.gz
 
-$ tar --strip-components=2 -zxvf 1.1.5.tar.gz DebianScript-1.1.5/Bash/
+$ tar --strip-components=2 -zxvf 1.1.6.tar.gz DebianScript-1.1.6/Bash/
 
 $ sudo chown -R `whoami`:`whoami` ./
 
