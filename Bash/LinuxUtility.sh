@@ -101,7 +101,7 @@ declare -a firewallmenu2options=('Enable Samba' 'Disable Samba' 'Enable Webmin' 
 declare -a firewallmenu3options=('Enable Wildfly' 'Disable Wildfly' 'Return to Previous Menu')
 declare -a certmanagemenuoptions=('Change installed SSL certificates' 'Update LetsEncrypt Certificates' 'Add new Certificate Authority' 'Return to Main Menu')
 
-declare -a cleanupmenu=('1 - Revert recent file changes, then exit.' '2 - Exit without reverting changes.' '3 - Remove last user added, then exit.')
+declare -a cleanupmenu=('Revert recent file changes, then exit.' 'Exit without reverting changes.' 'Remove last user added, then exit.')
 declare -a certificatemenu=('1 - Generate self-signed certificates' '2 - Use LetsEncrypt to generate and maintain certificates')
 
 declare -a removeowncloudmenuoptions=('Uninstall ownCloud application and MariaDB' 'Uninstall ownCloud application, all pre-requisites, database, and stored data' 'Return to Uninstall Menu')
@@ -130,7 +130,7 @@ clientname=""
 tzmain=""
 tzcountry=""
 tzlocale=""
-currentversion="1.1.6"
+currentversion="1.1.7"
 installedversion=""
 userchoice=""
 
@@ -204,6 +204,7 @@ netclassipv4=""
 ############ Main program ############
 ######################################
 
+error="$(errorTracking)"
 versionCheck;
 preInstall;
 mainMenu;
