@@ -95,10 +95,11 @@ Once this is done, rerun the script and enjoy.
  ```
   $ sudo crontab -e
  ```
-  Paste and edit the following at the end of the created file:
+  Paste and edit the following at the end of the created file, on a single line:
   (First number is minute of the hour, second number is hour of the day, in 24hr format. Runs daily.
   Set to a time when the server will be on, but not actively being used.)
+  This will enable and disable the necessary default and catchall sites, renew the certificates, then return the default and catchall     sites to their previous states.
  ```
-  30 2 * * * /usr/bin/letsencrypt renew >> /var/log/le-renew.log
+  30 2 * * * a2dissite 99-catchall.conf && a2ensite 0-default.conf && a2ensite 1-default-ssl.conf && systemctl reload apache2.service && /usr/bin/letsencrypt renew >> /var/log/le-renew.log && a2ensite 99-catchall.conf && a2dissite 0-default.conf && a2dissite 1-default-ssl.conf && systemctl reload apache2.service
  ```
   ctrl + x to exit, y to save, enter to save the file.
