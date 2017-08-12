@@ -1,7 +1,10 @@
+**NEW VERSION COMING SOON**
+
 # **Known issues in 1.1.6**
-
+ 
 1) VM Autostart has been removed, as this is broken currently. Will re-add once the issue is resolved.
-
+ 
+2) Missing spaces in InstallFunctions.cfg, in ownCloud, . Before running the script, use nano or vim to add spaces before the closing ] in the IF statements to check if using Let's Encrypt for installing dkim support, and in the generatecertificate check for adding the subdomain sites. This should prevent issues when running the script.
 
 # DebianScript
 Bash Script for hardening Ubuntu and Debian linux distributions, installing major server functions, and configuring them.
