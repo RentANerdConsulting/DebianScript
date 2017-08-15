@@ -1,10 +1,13 @@
-**NEW VERSION COMING SOON**
+# **NEW VERSION COMING SOON**
 
 # **Known issues in 1.1.6**
- 
+# 2 AND 3 REQUIRED BEFORE RUNNING SCRIPT!!!
+
 1) VM Autostart has been removed, as this is broken currently. Will re-add once the issue is resolved.
  
 2) Missing spaces in InstallFunctions.cfg, in ownCloud, netdata, and virtualbox installs. Before running the script, use nano or vim to add spaces before the closing ] in the IF statements to check if using Let's Encrypt for installing dkim support, and in the generatecertificate check for adding the subdomain sites. Double check the other IF statements in the immediate areas to make sure we haven't missed any others, adding spaces where needed. This should prevent issues when running the script.
+
+3) The newest version of VirtualBox returns a non zero during the installation of Guest Additions on VMs, if no window manager is installed, eg if only using the cli. This causes the script to fail just before completing that installation. To fix this, enter the parent folder you have the script in, then type nano scripts/VirtualBoxFunctions.cfg and remove || error_exit "$LINENO: install failed." after sudo /mnt/VBoxLinuxAdditions.run in the installGuestAdditions function. Save with ctrl+x then y.
 
 # DebianScript
 Bash Script for hardening Ubuntu and Debian linux distributions, installing major server functions, and configuring them.
