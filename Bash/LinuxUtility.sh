@@ -133,6 +133,9 @@ tzlocale=""
 currentversion="1.1.7"
 installedversion=""
 userchoice=""
+osversion=""
+distroid=""
+
 
 
 ###### Network variables ######
