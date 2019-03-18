@@ -36,6 +36,9 @@ fqdn=""
 # 3-netdata-ssl
 # 4-phpvirtualbox-ssl
 # 5-phpmyadmin-ssl
+# 6-plex-ssl
+# 7-chat-ssl
+# 8-wp-ssl
 
 
 ###### Variables for system role functions ######
@@ -65,6 +68,8 @@ virtualbox=""
 phpvbhostname=""
 vboxuserpass=""
 vmdir=""
+declare -a existingvms=()
+declare -a getexistingvms=()
 
 
 ###### Variables for Samba ######
@@ -135,7 +140,6 @@ installedversion=""
 userchoice=""
 osversion=""
 distroid=""
-
 
 
 ###### Network variables ######
