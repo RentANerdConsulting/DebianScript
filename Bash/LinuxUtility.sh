@@ -97,7 +97,7 @@ declare -a plexmenuoptions=('Install Plex Media Server' 'Uninstall Plex Media Se
 declare -a webminmenuoptions=('Install Webmin' 'Uninstall Webmin' 'Return to Main Menu')
 declare -a webadminmenuoptions=('Add new user to PHPMyAdmin access list' 'Add new user to PHPVirtualBox access list' 'Add new user to Netdata access list' 'Return to Main Menu')
 declare -a netdatamenuoptions=('Install Netdata' 'Uninstall Netdata' 'Return to Main Menu')
-declare -a virtualboxmenuoptions=('Install VirtualBox and PHPVirtualBox' 'Uninstall VirtualBox and PHPVirtualBox' 'Update Guest Additions' 'Return to Main Menu')
+declare -a virtualboxmenuoptions=('Install VirtualBox and PHPVirtualBox' 'Uninstall VirtualBox and PHPVirtualBox' 'Update Guest Additions' 'Display existing VMs' 'Set VM to start/stop with host automatically' 'Return to Main Menu')
 declare -a usersmenuoptions=('Add additional administrators or upgrade an existing user to admin' 'Add additional standard users' 'Display administrator users' 'Display human users' 'Display non system user accounts - full detail' 'Display non system user accounts - user name only' 'Display system user accounts - full detail' 'Display system user accounts - user name only' 'Display groups - full detail' 'Display groups - group names only' 'Next' 'Return to Main Menu')
 declare -a usersmenu2options=('Remove user accounts' 'Check if a user exists, and if admin or standard user' 'Check if a group exists' 'Check if a user is a member of a group' 'Add a user to an existing group' 'Create a new group' 'Remove a non-system user from a group' 'Remove a non-system group' 'Display all users in a specific group' 'Display all groups a specific user belongs to' 'Return to previous menu')
 declare -a systemmenuoptions=('System cleanup - remove obsolete packages' 'System update - update system files and programs' 'Update Tripwire database' 'List configured cron jobs' 'Return to Main Menu')
@@ -105,6 +105,7 @@ declare -a firewallmenu1options=('Enable Rsync' 'Disable Rsync' 'Enable NFS' 'Di
 declare -a firewallmenu2options=('Enable Samba' 'Disable Samba' 'Enable Webmin' 'Disable Webmin' 'Enable RDP' 'Disable RDP' 'Enable PHPVirtualBox' 'Disable PHPVirtualBox' 'Enable JBOSS' 'Disable JBOSS' 'Next' 'Return to Previous Menu')
 declare -a firewallmenu3options=('Enable Wildfly' 'Disable Wildfly' 'Return to Previous Menu')
 declare -a certmanagemenuoptions=('Change installed SSL certificates' 'Update LetsEncrypt Certificates' 'Add new Certificate Authority' 'Return to Main Menu')
+declare -a zfsmanagementoptions=('Install ZFS' 'List ZFS pools' 'Import ZFS pool' 'Export ZFS pool' 'Create ZFS pool' 'Scrub ZFS pool' 'Return to Main Menu')
 
 declare -a cleanupmenu=('Revert recent file changes, then exit.' 'Exit without reverting changes.' 'Remove last user added, then exit.')
 declare -a certificatemenu=('1 - Generate self-signed certificates' '2 - Use LetsEncrypt to generate and maintain certificates')
@@ -150,6 +151,14 @@ subnetmask=""
 baseip=""
 netclassipv4=""
 currentip=""
+
+
+###### ZFS variables ######
+
+zfspoolname=""
+declare -a getzfsnames=()
+declare -a zfsnames=()
+
 
 
 #######################
