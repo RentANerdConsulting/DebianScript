@@ -141,6 +141,9 @@ installedversion=""
 userchoice=""
 osversion=""
 distroid=""
+totsysmemory=""
+freesysmemory=""
+usedsysmemory=""
 
 
 ###### Network variables ######
@@ -155,6 +158,8 @@ currentip=""
 
 ###### ZFS variables ######
 
+zfsmemorymax=""
+zfsmemorymin=""
 zfspoolname=""
 declare -a getzfsnames=()
 declare -a zfsnames=()
@@ -169,6 +174,7 @@ declare -a zfsnames=()
 . $PWD/scripts/ErrorCleanupFunctions.cfg
 . $PWD/scripts/ErrorFunctions.cfg
 . $PWD/scripts/InputVerificationFunctions.cfg
+. $PWD/scripts/HWInfoFunctions.cfg
 . $PWD/scripts/GUIOptions.cfg
 . $PWD/scripts/TimezoneFunctions.cfg
 . $PWD/scripts/NetworkInterfaceFunctions.cfg
@@ -209,6 +215,7 @@ declare -a zfsnames=()
 . $PWD/scripts/SambaFunctions.cfg
 . $PWD/scripts/PlexFunctions.cfg
 . $PWD/scripts/WebminFunctions.cfg
+. $PWD/scripts/ZFSFunctions.cfg
 . $PWD/scripts/InstallFunctions.cfg
 . $PWD/scripts/UninstallFunctions.cfg
 . $PWD/scripts/UninstallMenus.cfg
